@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Bish-Bosh 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+
+    <header>Bish-Bosh 2.0</header>
+    <div>
+        <p class="info"><strong> This is the Bish-Bosh check game. Please write your numbers in the fields.</strong>
+        </p>
+        <p class="info"> The first number has to be a positive number and maximum 100. All numbers from 1 to your first
+            number will be
+            divided by the other two numbers that you will give. </p>
+        <p class="info"> If any number can be divided by the second number then you will get "Bish" instead of the
+            number.<br>
+            If any number can be divided by the third number then you will get "Bosh" instead of the number.<br>
+            If any number can be divided by the second AND the third number then you will get "Bish-Bosh" instead of the
+            number.</p>
+        <p class="info"><strong> Do not forget, numbers have to be positive and max 100!</strong></p>
+    </div>
+
+
+    <div class="alertContainer">
+        <div class="alert alert-danger" id="errorField" role="alert"> </div>
+    </div>
+
+
+    <div>
+        <h4>Enter three number: </h4>
+        <label> First number, the limit:</label>
+        <input type="number" id="firstNumber" class="numberInput" min="1" max="100" required> <br>
+        <label> Second number, the first divider:</label>
+        <input type="number" id="secondNumber" class="numberInput" min="1" max="100" required> <br>
+        <label> Third number, the second divider:</label>
+        <input type="number" id="thirdNumber" class="numberInput" min="1" max="100" required> <br>
+        <button id="submitButton"> Submit</button>
+    </div>
+
+
+    <div>
+        <h4 id="textAreaLabel"> Bish-Bosh Output:</h4>
+        <textarea id="output"></textarea>
+    </div>
+
+
+    <script src="bishbosh.js"> </script>
+
+
+    <footer>
+        <p> <small> &copy;2021 Webmaster: Judit Horvath </small> </p>
+    </footer>
+
+
+</body>
+
+</html>
