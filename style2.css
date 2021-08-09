@@ -87,7 +87,7 @@ body {
 }
 
 .lineThrough {
-    color: black;
+    color: blue;
     text-decoration: line-through;
     background-color: gainsboro;
 }
