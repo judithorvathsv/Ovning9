@@ -1,4 +1,4 @@
-    let myArray = [];
+ let myArray = [];
 let listsArray = [];
 
 const toDoList = {
@@ -6,6 +6,9 @@ const toDoList = {
     movingItem: "",
     clickedList: "",
 }
+
+
+
 
 //add item to the list:
 let button = document.getElementById('submitButton');
@@ -17,7 +20,7 @@ button.addEventListener('click', function() {
 
     let checkBox = document.createElement('input');
     checkBox.setAttribute('type', 'checkbox');
-    checkBox.setAttribute('id', 'checkId');
+    checkBox.setAttribute('class', 'checkboxClass');
 
     if (newItem !== "") {
         document.getElementById('inputField').placeholder = "Enter item...";
@@ -42,7 +45,6 @@ button.addEventListener('click', function() {
 button.addEventListener('dblclick', function(e) {
     document.getElementById('inputField').placeholder = "Enter item...";
     document.getElementById('inputField').style.backgroundColor = "cornsilk";
-
 });
 
 
@@ -74,24 +76,33 @@ let removableItem;
 function deleteItem() {
     getListOfListsArray();
 
-    let liObj = document.getElementsByClassName('liClass');
+    let liObj = document.querySelectorAll('.liClass');
     let i = liObj.length;
     let unchecked = [];
-
     let keyCount = Object.keys(listsArray).length;
 
-    while (i--) {
-        let box = liObj[i].getElementsByTagName('input')[0];
+    for (let index = 1; index < i; index++) {
+        let box = liObj[index].childNodes[1];
+
         if (box.checked) {
             //remove from the screen:
-            removableItem = liObj[i].textContent;
-            liObj[i].parentNode.removeChild(liObj[i]);
-            //remove from the listArray:
-            if (keyCount !== 0) {
-                for (let x = 0; x < keyCount; x++) {
+            liObj[index].parentNode.removeChild(liObj[index]);
+
+            //remove from the input, there is no saved list yet:
+            if (listsArray.length === 0) {
+                for (let x = 0; x < listsArray.length; x++) {
+                    listsArray.splice(x, 1);
+                    break;
+                }
+            }
+
+            //remove from the list and remove from the listArray:
+            if (listsArray.length !== 0) {
+                for (let x = 0; x < listsArray.length; x++) {
                     for (let y = 0; y <= keyCount; y++) {
-                        if (listsArray[x][y] == removableItem) {
+                        if (listsArray[x] == removableItem) {
                             listsArray[x].splice(y, 1);
+                            break;
                         }
                     }
                 }
@@ -100,7 +111,7 @@ function deleteItem() {
             unchecked.push(box.value);
         }
     }
-    return myArray
+    return myArray;
 }
 
 
@@ -115,7 +126,7 @@ deleteButton.addEventListener('click', function() {
 
 
 
-//simple click: mark all item:
+//simple click on button: mark all item:
 const markAllButton = document.getElementById('markAllButton');
 markAllButton.addEventListener('click', function() {
     let liObj = document.getElementsByTagName('ul')[0].getElementsByTagName('li');
@@ -131,7 +142,7 @@ markAllButton.addEventListener('click', function() {
 
 
 
-//double click: mark nothing item:
+//double click on button: mark nothing item:
 markAllButton.addEventListener('dblclick', function(e) {
     let liObj = document.getElementsByTagName('ul')[0].getElementsByTagName('li');
     let i = liObj.length;
@@ -207,6 +218,7 @@ function getListInArray() {
         myArray.push(elementsLI[i].textContent);
     }
     //put the listname into the array:
+
     myArray.unshift(toDoList.listName);
     return myArray;
 }
@@ -221,13 +233,12 @@ function getListOfListsArray() {
     //put list into a <li> element: 
     let li = document.createElement('li');
     li.setAttribute('class', 'listLiClass');
-    li.setAttribute('id', 'listsLiId');
     let ul = document.getElementById('listsUlId');
     let newItem = document.getElementById('listNameField').value;
 
     let checkBox = document.createElement('input');
     checkBox.setAttribute('type', 'checkbox');
-    checkBox.setAttribute('id', 'checkId');
+    checkBox.setAttribute('class', 'checkboxClass');
 
     if (newItem !== "") {
         document.getElementById('inputField').placeholder = "Enter name to the list...";
@@ -272,21 +283,26 @@ saveListInListsButton.addEventListener('click', function() {
 const deleteListButton = document.getElementById('deleteListButton');
 deleteListButton.addEventListener('click', function() {
 
-    let liObj = document.getElementsByClassName('listLiClass');
+    let liObj = document.querySelectorAll('.listLiClass');
+
+
     let i = liObj.length;
     let unchecked = [];
 
-    while (i--) {
-        let box = liObj[i].getElementsByTagName('input')[0];
-        if (box.checked) {
 
-            //delete items in the deleted list from listsArray (=array of arrays):
+    for (let index = 1; index < i; index++) {
+        let box = liObj[index].childNodes[1];
+        if (box.checked) {
+            //delete item from screen:
+            liObj[index].parentNode.removeChild(liObj[index]);
+            //delete items in the list from listsArray (=array of arrays):
             for (let x = 0; x < listsArray.length; x++) {
-                if (listsArray[x][0] == liObj[i].textContent) {
+                if (listsArray[x][0] == liObj[index].textContent) {
                     delete listsArray[x];
-                }
+                    break;
+                } else {}
             }
-            liObj[i].parentNode.removeChild(liObj[i]);
+
         } else {
             unchecked.push(box.value);
         }
@@ -295,10 +311,11 @@ deleteListButton.addEventListener('click', function() {
 
 
 
-
 //clickin on a list: display items above:
 function displayList(e) {
+    deleteItem();
     getListOfListsArray();
+
 
     if (e.target && e.target.matches('li.listLiClass')) {
         //delete the list above in the screen to get place to the list that user wants to open:
@@ -318,7 +335,7 @@ function displayList(e) {
                     let newItem = listsArray[i][j];
                     let checkBox = document.createElement('input');
                     checkBox.setAttribute('type', 'checkbox');
-                    checkBox.setAttribute('id', 'checkId');
+                    checkBox.setAttribute('class', 'checkboxClass');
                     ul.appendChild(li);
                     li.appendChild(document.createTextNode(newItem));
                     li.appendChild(checkBox);
@@ -417,7 +434,7 @@ pasteButton.addEventListener('click', function() {
 
             let checkBox = document.createElement('input');
             checkBox.setAttribute('type', 'checkbox');
-            checkBox.setAttribute('id', 'checkId');
+            checkBox.setAttribute('class', 'checkboxClass');
 
             ul.appendChild(li);
             li.appendChild(document.createTextNode(newItem));
