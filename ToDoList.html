@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="todostyle.css">
+
+
+    <title>To Do</title>
+
+
+</head>
+
+<body class="body">
+
+    <header>To-Do List</header>
+
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="inputField" placeholder="Enter item... " required>
+        <div class="input-group-prepend">
+            <button class="btn btn-success" type="button" id="submitButton">Add</button>
+        </div>
+    </div>
+
+
+
+    <div>
+        <ul class="list-group" id="ulId">
+        </ul>
+    </div>
+
+
+
+    <div class="buttonGroup">
+        <button class="btn btn-success" type="button" id="deletetButton">Remove</button>
+        <button class="btn btn-success" type="button" id="markAllButton">Unmark/Mark all item</button>
+        <button class="btn btn-success" type="button" id="saveButton">Save your list to file</button>
+        <button class="btn btn-success" type="button" id="copyButton">Copy item from list</button>
+        <button class="btn btn-success" type="button" id="pasteButton">Paste item to list</button>
+    </div>
+
+
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="listNameField" placeholder="Enter name to the list... " required>
+        <div class="input-group-prepend">
+            <button class="btn btn-success" type="button" id="saveListInListsButton">Add to your lists</button>
+        </div>
+    </div>
+
+
+
+
+    <div class="alertContainer">
+        <div class="alert alert-danger" id="errorField" role="alert"> </div>
+    </div>
+
+
+
+    <div class="lists" id=listsDivId>
+        <label class="myLabels">Your saved lists:</label>
+        <ul class="list-group" id="listsUlId">
+
+        </ul>
+        <button class="btn btn-success" type="button" id="deleteListButton">Remove list</button>
+    </div>
+
+
+
+    <div class="changeBackground">
+        <label class="myLabels">To change your background, choose one then click the Change style button:</label>
+        <select class="custom-select" id="chosenBackground">
+            <option value="Default">Default</option>
+            <option value="White">White</option>
+            <option value="Black">Black</option>
+        </select>
+        <button class="btn btn-success" type="button" id="changeBackgroundButton">Change style</button>
+    </div>
+
+
+
+    <img src="book.jpg" class="book" alt="book" id="book">
+
+
+
+    <script src="todofunctions.js"></script>
+
+
+
+    <footer>
+        <p> <small> &copy;2021 Webmaster: Judit Horvath </small> </p>
+    </footer>
+
+
+</body>
+
+</html>
