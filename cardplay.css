@@ -1,0 +1,78 @@
+body {
+    background-color: #636161;
+}
+
+#header {
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+p {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submitButton {
+    color: white;
+    background-color: #494848;
+    border-color: red;
+}
+
+#submitButton:hover {
+    background-color: red;
+    color: black;
+}
+
+#textAreaLabel {
+    margin-top: 100px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#output {
+    width: 100px;
+    background-color: #494848;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardclass {
+    transition: 1s ease-in-out;
+    margin: calc(-50px);
+}
+
+.cardclass:hover {
+    transform: scale(1.5, 1.5);
+}
+
+.alertContainer {
+    width: 600px;
+    margin: 0 auto;
+}
+
+#winField {
+    margin-top: 10px;
+    text-align: center;
+    display: none;
+}
+
+footer {
+    color: white;
+    position: fixed;
+    bottom: 0;
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="cardplay.css">
+
+    <title>Play with deck of Cards</title>
+
+</head>
+
+<body>
+
+    <h1 id="header">Play with Cards API</h1>
+    <p id="info">You have 50 chances to win. Find three of the same suit!</p>
+    <button class="btn btn-dark" type="button" id="submitButton">Add card</button>
+    <div class="alertContainer">
+        <div class="alert alert-warning" id="winField" role="alert"> </div>
+    </div>
+    <h4 id="textAreaLabel"> Card:</h4>
+    <div id="output"></div>
+
+    <footer>
+        <p> <small> &copy;2021 Webmaster: Judit Horvath </small> </p>
+    </footer>
+
+    <script src="cardplayfunctions.js"></script>
+
+</body>
+
+</html>
