@@ -1,0 +1,64 @@
+body {
+    background-color: #636161;
+    margin: 30px;
+}
+
+#header {
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.alertContainer {
+    width: 600px;
+    margin: 0 auto;
+}
+
+#errorField {
+    margin-top: 10px;
+    display: none;
+    text-align: center;
+}
+
+#inputField {
+    color: white;
+    background-color: #494848;
+    border-color: black;
+}
+
+#submitButton {
+    color: white;
+    background-color: #494848;
+    border-color: rgb(61, 100, 126);
+}
+
+#submitButton:hover {
+    background-color: red;
+    color: black;
+}
+
+#textAreaLabel {
+    margin-top: 100px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#output {
+    width: 350px;
+    color: white;
+    border-color: black;
+    background-color: #494848;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    color: white;
+    position: fixed;
+    bottom: 0;
+}

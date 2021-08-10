@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style3.css">
+
+    <title>StarWars API</title>
+
+</head>
+
+<body>
+
+    <h1 id="header">StarWarsAPI</h1>
+
+    <div class="alertContainer">
+        <div class="alert alert-danger" id="errorField" role="alert"> </div>
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="inputField" placeholder="Enter item... " required>
+        <div class="input-group-prepend">
+            <button class="btn btn-primary" type="button" id="submitButton">Add</button>
+        </div>
+    </div>
+
+    <h4 id="textAreaLabel"> Star Wars Output:</h4>
+
+    <textarea id="output" rows="5"></textarea>
+
+
+    <footer>
+        <p> <small> &copy;2021 Webmaster: Judit Horvath </small> </p>
+    </footer>
+
+    <script src="starwarsfunction.js"></script>
+
+</body>
+
+</html>
